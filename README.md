@@ -1,6 +1,7 @@
-# discord-random-auto-chat
-
+<h1 align=center>Discord Random Auto Chat</h1>
+<p align=center>
 Discord Random Auto Chat with Selenium
+</p>
 
 ### Required
 
