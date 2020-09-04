@@ -7,9 +7,17 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from data import sentences
-import user
+# import conf
 import time
 import random
+
+import yaml
+
+with open("conf.yaml", 'r') as stream:
+    try:
+        conf=yaml.safe_load(stream)
+    except yaml.YAMLError as exc:
+        print(exc)
 
 driver = webdriver.Chrome('/usr/bin/chromedriver')
 actions = ActionChains(driver)
@@ -17,20 +25,21 @@ actions = ActionChains(driver)
 driver.get("https://discord.com/login")
 inputName = driver.find_element_by_name("email")
 inputName.clear()
-inputName.send_keys(user.email)
+inputName.send_keys(conf['email'])
 inputPass = driver.find_element_by_name("password")
 inputPass.clear()
-inputPass.send_keys(user.password)
+inputPass.send_keys(conf['password'])
 inputPass.send_keys(Keys.RETURN)
 
 
 wait = WebDriverWait(driver, 10)
 element = wait.until(EC.url_changes("https://discord.com/login"))
 
-driver.get("https://discord.com/channels/number/number")
+driver.get(conf['channel'])
 time.sleep(7)
 
 theBody = driver.find_element_by_tag_name('body')
+count = 1
 try:
     while True:
         text = random.choice(sentences)
@@ -43,8 +52,11 @@ try:
         print("-> Sending Text")
         actions.perform()
 
+
+        print("-> Count: " + str(count))
+        count += 1
         print("----------------------------------")
-        time.sleep(3)
+        time.sleep(conf['delayinsecond'])
 except KeyboardInterrupt:
     driver.close()
     pass
