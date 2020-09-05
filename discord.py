@@ -19,7 +19,11 @@ with open("conf.yaml", 'r') as stream:
     except yaml.YAMLError as exc:
         print(exc)
 
-driver = webdriver.Chrome('/usr/bin/chromedriver')
+if conf['os'] == 'linux':
+    driver = webdriver.Chrome('/usr/bin/chromedriver')
+else:
+    driver = webdriver.Chrome('chromedriver.exe')
+    
 actions = ActionChains(driver)
 
 driver.get("https://discord.com/login")
