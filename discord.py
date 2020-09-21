@@ -20,7 +20,7 @@ with open("conf.yaml", 'r') as stream:
         print(exc)
 
 if conf['os'] == 'linux':
-    driver = webdriver.Chrome('/usr/bin/chromedriver')
+    driver = webdriver.Chrome(conf['linuxChromeDriverPath'])
 else:
     driver = webdriver.Chrome('chromedriver.exe')
     

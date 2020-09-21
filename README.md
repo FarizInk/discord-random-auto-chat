@@ -7,7 +7,6 @@ Discord Random Auto Chat with Selenium
 
 - [Selenium](#selenium)
 - [Python Yaml](#python-yaml)
-- [Chromedriver](#chromedriver)
 
 ### Installation
 
@@ -19,11 +18,6 @@ Discord Random Auto Chat with Selenium
 
 `pip install pyyaml`
 
-#### Chromedriver
-
-- Windows: just install as usual
-- Linux / OSX: Look at documentation chromedriver or search. Because different Linux distributions are different, the installation method is also different (If installing chromedriver by package manager)
-
 ### How to run?
 
 1. Clone this repo `git clone https://github.com/FarizInk/discord-random-auto-chat.git`
@@ -31,3 +25,9 @@ Discord Random Auto Chat with Selenium
 3. Copy `conf.yaml.example` to `conf.yaml`
 4. Change configuration email, password, channel and delay (if need)
 5. Run `python discord.py`
+
+
+#### If ChromeDriver Error or Outdated try install different version
+
+- Windows: just install as usual
+- Linux / OSX: Look at documentation chromedriver or search. Because different Linux distributions are different, the installation method is also different (If installing chromedriver by package manager)
