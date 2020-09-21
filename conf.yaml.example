@@ -3,3 +3,5 @@ password: YourPasword
 channel: https://discord.com/channels/number/number
 delayinsecond: 60
 os: linux
+customMessage: "" # Custom Message to Loop, "" to disable this feature
+loop: # Empty if u want infinite looping (number only, like delayinsecond)

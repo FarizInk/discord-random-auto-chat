@@ -43,10 +43,15 @@ driver.get(conf['channel'])
 time.sleep(7)
 
 theBody = driver.find_element_by_tag_name('body')
+
 count = 1
+
 try:
     while True:
-        text = random.choice(sentences)
+        if conf['customMessage'] != "":
+            text = conf['customMessage']
+        else:
+            text = random.choice(sentences)
         textArea = driver.find_elements_by_css_selector("div[class^=textArea-]")[0]
         textArea.find_elements_by_css_selector("div")[2].click()
         print("-> Clicked Text Area")
@@ -60,7 +65,17 @@ try:
         print("-> Count: " + str(count))
         count += 1
         print("----------------------------------")
+
+        if conf['loop'] is not None :
+            if conf['loop'] >= count:
+                pass
+            else:
+                time.sleep(conf['delayinsecond'])
+                break
+
         time.sleep(conf['delayinsecond'])
 except KeyboardInterrupt:
     driver.close()
     pass
+
+driver.close()
