@@ -27,6 +27,7 @@ else:
 actions = ActionChains(driver)
 
 driver.get("https://discord.com/login")
+time.sleep(1)
 inputName = driver.find_element_by_name("email")
 inputName.clear()
 inputName.send_keys(conf['email'])
