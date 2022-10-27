@@ -1,5 +1,7 @@
 <h1 align=center>Discord Random Auto Chat</h1>
-Discord Random Auto Chat with Selenium, this repo si abandoned because I remake with puppeteer version, [check here!](https://github.com/FarizInk/gak-ngotak)
+<p align="center">
+Discord Random Auto Chat with Selenium, this repo si abandoned because I remake with puppeteer version, <a href="https://github.com/FarizInk/gak-ngotak">check here!</a>
+</p>
 
 ### Required
 
